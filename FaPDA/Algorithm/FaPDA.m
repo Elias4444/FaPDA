@@ -93,7 +93,7 @@ difference4=(difference4-min2)/(max2-min2);% normalized data
 theresholdanterior=(mean(difference1)+mean(difference3))/2; % Create a threshold of anterior area
 thresholdmiddle=(mean(difference2)+mean(difference4))/2; % Create a threshold of middle area
 
-%% Use FaPDA: Facial paralysis detection algorithm applied in baseline mice
+%% Use FaPA: Facial paralysis  algorithm  in baseline mice
 
 for loop3=1:length(difference1)% loop to obtain differences between frames
 if difference1(loop3)<thresholdanterior %conditional to detect frames with values under the threshold
@@ -113,7 +113,7 @@ if (double(length(find(identityanterior==1))>(95*n)/100) + double(length(find(id
 else
     detection=0 %If 95% of the frames are with movement, the system ends up in without paralysis
 end
-%% Use FaPDA: Facial paralysis detection algorithm applied in paralyzed mice
+%% Use FaPA: Facial paralysis  algorithm  in paralyzed mice
 
 for loop4=1:length(difference3)% loop to obtain differences between frames
 if difference3(loop4)<thresholdanterior %conditional to detect frames with values under the threshold
